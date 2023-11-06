@@ -77,15 +77,4 @@ register_deactivation_hook( __FILE__, 'deactivate_nct_plugin' );
 	inc\init::register_services();
 }
 
-require 'plugin-update-checker/plugin-update-checker.php';
-$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-	'https://github.com/KaiNaumann/KNChurchtoolPlugin/',
-	__FILE__,
-	'KNChurchtoolPlugin'
-);
 
-//Set the branch that contains the stable release.
-$myUpdateChecker->setBranch('Main');
-
-//Optional: If you're using a private repository, specify the access token like this:
-$myUpdateChecker->setAuthentication('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');
