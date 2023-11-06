@@ -1,0 +1,17 @@
+{
+    "name": "fegab/kn_churchtoolplugin",
+    "description": "Churchtool Plugin der FeG Aschaffenburg",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "KaiNaumann",
+            "email": "naumann_kai@gmx.de"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"inc\\": "./inc"}
+    }
+}
