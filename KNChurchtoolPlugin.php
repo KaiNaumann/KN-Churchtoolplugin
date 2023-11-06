@@ -44,48 +44,48 @@ defined( 'ABSPATH' ) or die( 'Hey, what are you doing here? You silly human!' );
 ini_set('display_errors', 1);
 
 
-// // Require once the Composer Autoload
+// Require once the Composer Autoload
 
-// if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
-// 	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
-// }
+if ( file_exists( dirname( __FILE__ ) . '/vendor/autoload.php' ) ) {
+	require_once dirname( __FILE__ ) . '/vendor/autoload.php';
+}
 
-// /**
-//  * The code that runs during plugin activation
-//  */
-// function activate_nct_plugin() {
+/**
+ * The code that runs during plugin activation
+ */
+function activate_nct_plugin() {
 
-// 		inc\base\Activate::Activate_plugin();
+		inc\base\Activate::Activate_plugin();
 
-// }
+}
 
-// register_activation_hook ( __FILE__, 'activate_nct_plugin' );
+register_activation_hook ( __FILE__, 'activate_nct_plugin' );
 
-// /**
-//  * The code that runs during plugin deactivation
-//  */
-// function deactivate_nct_plugin() {
-// 	inc\base\Deactivate::Deactivate_plugin();
-// }
-// register_deactivation_hook( __FILE__, 'deactivate_nct_plugin' );
+/**
+ * The code that runs during plugin deactivation
+ */
+function deactivate_nct_plugin() {
+	inc\base\Deactivate::Deactivate_plugin();
+}
+register_deactivation_hook( __FILE__, 'deactivate_nct_plugin' );
 
-// /**
-//  * Initialize all the core classes of the plugin
-//  */
+/**
+ * Initialize all the core classes of the plugin
+ */
 
-//  if ( class_exists( 'inc\\init' ) ) {
-// 	inc\init::register_services();
-// }
+ if ( class_exists( 'inc\\init' ) ) {
+	inc\init::register_services();
+}
 
-// require 'plugin-update-checker/plugin-update-checker.php';
-// $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-// 	'https://github.com/KaiNaumann/KNChurchtoolPlugin/',
-// 	__FILE__,
-// 	'KNChurchtoolPlugin'
-// );
+require 'plugin-update-checker/plugin-update-checker.php';
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/KaiNaumann/KNChurchtoolPlugin/',
+	__FILE__,
+	'KNChurchtoolPlugin'
+);
 
-// //Set the branch that contains the stable release.
-// $myUpdateChecker->setBranch('fegab');
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('Main');
 
-// //Optional: If you're using a private repository, specify the access token like this:
-// $myUpdateChecker->setAuthentication('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');
+//Optional: If you're using a private repository, specify the access token like this:
+$myUpdateChecker->setAuthentication('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');
