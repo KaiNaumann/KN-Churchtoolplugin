@@ -1,24 +1,23 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-CT',
-    'version' => 'dev-CT',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'name' => 'fegab/kn_churchtoolplugin',
+        'pretty_version' => 'dev-Main',
+        'version' => 'dev-Main',
+        'reference' => '80cb479ae415fec468773668f45e3d23172c21bf',
+        'type' => 'project',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => true,
     ),
-    'reference' => 'c7c4e237b39268fd99bd5e822c5d7098ee9676a7',
-    'name' => 'fegab/newchurchtoolplugin',
-  ),
-  'versions' => 
-  array (
-    'fegab/newchurchtoolplugin' => 
-    array (
-      'pretty_version' => 'dev-CT',
-      'version' => 'dev-CT',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'c7c4e237b39268fd99bd5e822c5d7098ee9676a7',
+    'versions' => array(
+        'fegab/kn_churchtoolplugin' => array(
+            'pretty_version' => 'dev-Main',
+            'version' => 'dev-Main',
+            'reference' => '80cb479ae415fec468773668f45e3d23172c21bf',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
     ),
-  ),
 );
