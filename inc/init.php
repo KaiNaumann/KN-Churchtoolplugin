@@ -25,8 +25,12 @@ final class init
         return [
 			            
             base\Enqueue::class,
-
-    
+            pages\Dashboard::class,
+            KNCT\KNctSetup::class,
+            KNCT\KNctLogin::class,
+            KNCT\KNctCal::class,
+            KNCT\KNctAppointment::class,
+               
         ];
     }
     private static function instantiate( $class )

@@ -5,7 +5,7 @@
 
 /*
 Plugin Name: KN Churchtool Plugin
-Plugin URI: https://github.com/KaiNaumann/KNChurchtoolPlugin/
+Plugin URI: https://github.com/KaiNaumann/KN-Churchtoolplugin
 Description: FEG ASchaffenburg Churchtool Plugin
 Version: 0.1.0.0
 Requires at least: 5.8
