@@ -1,5 +1,5 @@
 {
-    "name": "fegab/kn_churchtoolplugin",
+    "name": "Main/kn_churchtoolplugin",
     "description": "Churchtool Plugin der FeG Aschaffenburg",
     "type": "project",
     "license": "GPL",
@@ -14,6 +14,7 @@
         "psr-4": {"inc\\": "./inc"}
     },
     "require": {
-        "5pm-hdh/churchtools-api": "dev-master"
+        "5pm-hdh/churchtools-api": "dev-master",
+        "yahnis-elsts/plugin-update-checker": "dev-master"
     }
 }

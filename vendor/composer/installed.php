@@ -3,7 +3,7 @@
         'name' => 'fegab/kn_churchtoolplugin',
         'pretty_version' => 'dev-Main',
         'version' => 'dev-Main',
-        'reference' => '9715a17102e0c4c48805299162d80c3fb6ab96e2',
+        'reference' => 'baeaab0bc8d10d4001c195b855f3a9b4c35fc069',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -33,7 +33,7 @@
         'fegab/kn_churchtoolplugin' => array(
             'pretty_version' => 'dev-Main',
             'version' => 'dev-Main',
-            'reference' => '9715a17102e0c4c48805299162d80c3fb6ab96e2',
+            'reference' => 'baeaab0bc8d10d4001c195b855f3a9b4c35fc069',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -162,6 +162,17 @@
             'install_path' => __DIR__ . '/../symfony/deprecation-contracts',
             'aliases' => array(
                 0 => '3.4.x-dev',
+            ),
+            'dev_requirement' => false,
+        ),
+        'yahnis-elsts/plugin-update-checker' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '5f251be064949ddce8a040a2bb9e4e1747000d95',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../yahnis-elsts/plugin-update-checker',
+            'aliases' => array(
+                0 => '9999999-dev',
             ),
             'dev_requirement' => false,
         ),
