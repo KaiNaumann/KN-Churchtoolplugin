@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
-        'name' => 'fegab/kn_churchtoolplugin',
+        'name' => 'nauma/kn-churchtoolplugin',
         'pretty_version' => 'dev-Main',
         'version' => 'dev-Main',
-        'reference' => 'baeaab0bc8d10d4001c195b855f3a9b4c35fc069',
+        'reference' => '4e7d614c6861d6d42c2fd100efaad430e890aade',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -30,19 +30,10 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'fegab/kn_churchtoolplugin' => array(
-            'pretty_version' => 'dev-Main',
-            'version' => 'dev-Main',
-            'reference' => 'baeaab0bc8d10d4001c195b855f3a9b4c35fc069',
-            'type' => 'project',
-            'install_path' => __DIR__ . '/../../',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'guzzlehttp/guzzle' => array(
             'pretty_version' => '7.9.x-dev',
             'version' => '7.9.9999999.9999999-dev',
-            'reference' => 'd95d9ab74822c2ca06b31477cd6775a4a299b8e8',
+            'reference' => '41042bc7ab002487b876a0683fc8dce04ddce104',
             'type' => 'library',
             'install_path' => __DIR__ . '/../guzzlehttp/guzzle',
             'aliases' => array(),
@@ -51,7 +42,7 @@
         'guzzlehttp/promises' => array(
             'pretty_version' => '2.0.x-dev',
             'version' => '2.0.9999999.9999999-dev',
-            'reference' => '71b12f952d8be69a239989db2fe08314a5189e3b',
+            'reference' => 'bbff78d96034045e58e13dedd6ad91b5d1253223',
             'type' => 'library',
             'install_path' => __DIR__ . '/../guzzlehttp/promises',
             'aliases' => array(),
@@ -60,7 +51,7 @@
         'guzzlehttp/psr7' => array(
             'pretty_version' => '2.6.x-dev',
             'version' => '2.6.9999999.9999999-dev',
-            'reference' => '38ef514a6c21335f29d9be64b097d2582ecbf8e4',
+            'reference' => '45b30f99ac27b5ca93cb4831afe16285f57b8221',
             'type' => 'library',
             'install_path' => __DIR__ . '/../guzzlehttp/psr7',
             'aliases' => array(),
@@ -69,12 +60,21 @@
         'monolog/monolog' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c915e2634718dbc8a4a15c61b0e62e7a44e14448',
+            'reference' => 'c412c2e0d6c98525e55746294dc40413f6ffebf3',
             'type' => 'library',
             'install_path' => __DIR__ . '/../monolog/monolog',
             'aliases' => array(
                 0 => '3.x-dev',
             ),
+            'dev_requirement' => false,
+        ),
+        'nauma/kn-churchtoolplugin' => array(
+            'pretty_version' => 'dev-Main',
+            'version' => 'dev-Main',
+            'reference' => '4e7d614c6861d6d42c2fd100efaad430e890aade',
+            'type' => 'project',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
             'dev_requirement' => false,
         ),
         'psr/http-client' => array(

@@ -1,20 +1,22 @@
 {
-    "name": "Main/kn_churchtoolplugin",
-    "description": "Churchtool Plugin der FeG Aschaffenburg",
+    "name": "nauma/kn-churchtoolplugin",
+    "description": "Das neue Plugin",
     "type": "project",
+    "require": {
+        "yahnis-elsts/plugin-update-checker": "dev-master",
+        "5pm-hdh/churchtools-api": "dev-master"
+    },
     "license": "GPL",
+    "autoload": {
+        "psr-4": {
+            "inc\\": "./inc"
+        }
+    },
     "authors": [
         {
             "name": "KaiNaumann",
             "email": "naumann_kai@gmx.de"
         }
     ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-4": {"inc\\": "./inc"}
-    },
-    "require": {
-        "5pm-hdh/churchtools-api": "dev-master",
-        "yahnis-elsts/plugin-update-checker": "dev-master"
-    }
+    "minimum-stability": "dev"
 }
