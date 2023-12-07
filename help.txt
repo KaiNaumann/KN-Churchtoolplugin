@@ -1,0 +1,162 @@
+public function custom_taxonomy() 
+        {
+
+            //CODE TO REGISTER TAXONOMY
+         
+            // if( !term_exists( 'Example Category', 'calender' ) ) 
+            // {
+            //     wp_insert_term(
+            //         'Example Category',
+            //         'calender',
+            //         array(
+            //           'description' => 'This is an example category created with wp_insert_term.',
+            //           'slug'        => 'example-category'
+            //         )
+            //     );
+            // }
+         } 
+public function print_array($array)
+        {
+            echo "<pre>";
+            print_r($array);
+            echo "</pre>";
+        }
+        
+            
+             
+        
+        
+        
+        // function create_new_term($id, $name,$nametrans  ) {
+        //     $term = $name; // Replace with the name of the term you want to create
+        //     $description = $id ;
+        //     $taxonomy = 'kalender'; // Replace with your actual taxonomy slug
+        //     $slug = $id;
+        //     // sanitize_title($term);
+        //     $args = array(
+        //         'description' => $description, // Add a description if needed
+        //         'slug'        => sanitize_title($term),
+        //     );
+        
+        //     $result = wp_insert_term(               
+        //                             $term,
+        //                             'kalender',
+        //                             array(
+        //                                     'description' => $description,
+        //                                     'slug'    => $slug,
+
+        //                                  )
+        //                             );
+        
+        //     if (is_wp_error($result)) {
+        //         echo 'Error creating term: ' . $result->get_error_message();
+        //     } else {
+        //         echo 'Term created successfully with ID ' . $result['term_id'];
+        //     }
+        // }
+
+        
+        
+        
+        
+    public function register() 
+	{
+    
+        $data = get_option( 'kn_nct_plugin' );
+        
+        $update = $data ['update'] ?? false;
+        
+       
+        if ($update)  {
+            $this-> knct_get_Cal($data);
+        };
+           
+
+    return;
+	}
+
+ }
+// Taxonomy terms
+                //     'tax_input'     => array(
+                //         'calender' => array( $CTnametrans ),
+                //     ),
+
+ echo '<br>' .($CTname);
+    
+                // $this-> print_array($Appo);
+    
+                echo '<br>' .($Appo->getId());
+                // // Output: 848
+    
+                echo '<br>' .( $Appo->getCaption());
+                // Output: "Service"
+    
+                echo '<br>' .( $Appo->getStartDate());
+                // Output: "2022-08-07T15:00:00Z"
+    
+                echo '<br>' .( $Appo->getEndDate());
+                // Output: "2022-08-07T16:00:00Z"
+    
+                echo '<br>' .( $Appo->getStartDateAsDateTime()?->format("Y-m-d H:i:s"));
+                // Output: "2022-08-07 15:00:00"
+    
+                echo '<br>' .( $Appo->getEndDateAsDateTime()?->format("Y-m-d H:i:s"));
+                // Output: "2022-08-07 16:00:00"
+    
+    
+                echo '<br>' .( $Appo->getAllDay());
+                // Output: "false"
+    
+    
+                echo '<br>' .( $Appo->getNote());
+                // Output: "Test Note"
+    
+                echo '<br>' .( $Appo->getVersion());
+                // Output: 1
+    
+                echo '<br>' .( $Appo->getInformation());
+                // Output: "Information Text"
+    
+                echo '<br>' .( $Appo->getLink());
+                // Output: "https://example.com"
+    
+                echo '<br>' .( $Appo->getIsInternal());
+                // Output: false
+    
+    
+                // Repeat of Appointment
+                echo '<br>' .( $Appo->getRepeatId());
+                // Output: 0
+    
+                echo '<br>' .( $Appo->getRepeatFrequency());
+                // Output: 1
+    
+    
+                // Retrieve Address:
+                echo '<br>' .( $Appo->getAddress()?->getMeetingAt());
+                // Output: "Evangelische Brückengemeinde"
+    
+                echo '<br>' .( $Appo->getAddress()?->getStreet());
+                // Output: "Wilhelmstraße 132"
+    
+                echo '<br>' .( $Appo->getAddress()?->getAddition());
+                // Output: "-"
+    
+                echo '<br>' .( $Appo->getAddress()?->getDistrict());
+                // Output: "-"
+    
+                echo '<br>' .( $Appo->getAddress()?->getZip());
+                // Output: "89518"
+    
+                echo '<br>' .( $Appo->getAddress()?->getCity());
+                // Output: "Heidenheim an der Brenz"
+    
+                echo '<br>' .( $Appo->getAddress()?->getCountry());
+                // Output: "DE"
+    
+                echo '<br>' .( $Appo->getAddress()?->getLatitude());
+                // Output: "48.680651"
+    
+                echo '<br>' .( $Appo->getAddress()?->getLongitude());
+                // Output: "10.130883553439624"
+                echo '<p>';

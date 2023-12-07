@@ -29,7 +29,7 @@ final class init
             KNCT\KNctSetup::class,
             KNCT\KNctLogin::class,
             KNCT\KNctCal::class,
-            // KNCT\KNctAppointment::class,
+            KNCT\KNctAppointment::class,
                
         ];
     }
