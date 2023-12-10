@@ -40,7 +40,7 @@ Copyright 2005-2015 Automattic, Inc.
 
 defined( 'ABSPATH' ) or die( 'Hey, what are you doing here? You silly human!' );
 
-// include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 ini_set('display_errors', 1);
 
@@ -73,7 +73,20 @@ register_deactivation_hook( __FILE__, 'deactivate_nct_plugin' );
 
 // plugin.php
 
+require dirname( __FILE__ ) .'/vendor/yahnis-elsts/plugin-update-checker/plugin-update-checker.php';
+	use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+ 
+	$myUpdateChecker = PucFactory::buildUpdateChecker(
+		'https://github.com/KaiNaumann/KN-Churchtoolplugin',
+		__FILE__,
+		'KN-Churchtoolplugin'
+	);
+	
+	//Set the branch that contains the stable release.
+	$myUpdateChecker->setBranch('Main');
 
+	//Optional: If you're using a private repository, specify the access token like this:
+	$myUpdateChecker->setAuthentication('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');
 
 
 /**
