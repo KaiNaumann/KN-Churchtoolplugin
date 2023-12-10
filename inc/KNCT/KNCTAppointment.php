@@ -14,9 +14,6 @@ use CTApi\Models\Calendars\CombinedAppointment\CombinedAppointmentRequest;
 use CTApi\Models\Events\Event\EventAgendaRequest;
 use CTApi\Models\Events\Event\EventRequest;
 
-        
-
-
 
 class KNctAppointment
  {
@@ -32,79 +29,77 @@ class KNctAppointment
     
     function knct_get_Appointments()
     {
+        // define('WP_USE_THEMES', false);
+        // require('path-to-your-wordpress/wp-load.php');
         $cal_data = get_option ( 'kn_nct_cal' );
-        
+       
 
         foreach ($cal_data as $cal) {
-            
-            $cal_CTid =  '3';
-            // $cal[0];
-            $CTname = $cal[1];
-            $CTnametrans = $cal[2];
-       
-            $appointments = AppointmentRequest::forCalendar($cal_CTid)
-            // ->where("from", "2023-11-01")
-            // ->where("to", "2025-02-01")
-            ->get();
-            
-            foreach ($appointments as $Appo) 
+            $cal_CTid = $cal[0];
+            $cal_CT_name = $cal[2];
+            $appointments = AppointmentRequest::forCalendar($cal_CTid)->get();
+            // // $this->print_array($appointments);
+            foreach ($appointments as $appointment)
             {
-                // $this->print_array($Appo);
+                $CT_appointment_titel = $appointment->getCaption();
+                $CT_appointment_id = $appointment->getid();
+                // Überprüfe, ob die Kategorie mit dem gegebenen Titel vorhanden ist
+                $term = get_term_by('name', $cal_CT_name, 'calender');
+                // if ($term) {
+                    $term_id = $term->term_id;
+                //     echo 'Die Term-ID für "Dein Taxonomie-Titel" in "calender" ist: ' . $term_id;
+                // } else {
+                //     echo 'Der Term wurde nicht gefunden.';
+                // }
 
-                // Daten für den neuen Eintrag
-                
-                
-
-                $args = array(
-                    'post_type' => 'ctevent',
-                    'meta_query' => array(
-                        array(
-                            'key' => 'acf_ctevent_id',
-                            'value' => $Appo->getID(),
-                            'compare' => '='
-                        )
-                    )
-                );
-        
-                // Initialisiere die WP_Query
-                $query = new \WP_Query($args);
-                
-                // Überprüfe, ob es bereits einen Beitrag mit dem gesuchten Wert gibt
-                if (!$query->have_posts()) {
-                    // Beitrag existiert noch nicht, also erstelle einen neuen Beitrag
-                    
-                    $new_post = array(
-                        'post_title'    => $Appo->getCaption(),
-                        'post_content'  => '',
-                        'post_status'   => 'publish', // Veröffentlichen Sie den Eintrag
-                        'post_type'     => 'ctevent',// Benutzerdefinierter Beitragstyp 'ctevent'
+                $new_post = array(
+                    'post_title'    => $CT_appointment_titel,
+                    'post_content'  => $CT_appointment_id,
+                    'post_status'   => 'publish', // Veröffentlichen Sie den Eintrag
+                    'post_type'     => 'ctevent',// Benutzerdefinierter Beitragstyp 'ctevent'
                     // Taxonomy terms
-                        // 'tax_input'     => array(
-                        //     'calender' => array( $CTnametrans ),
-                        // ),
+                        'tax_input'     => array(
+                            'calender' => $term_id
+                        ),
                     );
 
-                   
+                // Definiere die Abfrage für den Post-Typ 'ctevent'
+                $args = array(
+                    'post_type' => 'ctevent',  // Ändere dies auf den gewünschten Post-Typ, wenn es nicht 'post' ist
+                        'post_status' => 'publish',  // Du kannst den Status anpassen, wenn nötig
+                        'posts_per_page' => 1,  // Hier wird nur ein Beitrag abgerufen
+                        'meta_query' => array(
+                            array(
+                                'key' => 'post_content',
+                                'value' => $CT_appointment_id,
+                                'compare' => '='
+                            )
+    )
+                );
+
+                // Erstelle die Abfrage
+                $ctevent_query = new \WP_Query($args);
+
+                // Überprüfe, ob es Beiträge gibt
+                if ($ctevent_query->have_posts()) {
+                    echo 'Es gibt Beiträge vom Post-Typ ctevent.';
+                    
+                    // Setze die Abfrage zurück, um Konflikte zu vermeiden
+                    wp_reset_postdata();
+                } else {
+                    
                     $post_id = wp_insert_post( $new_post );
 
-                    $this->print_array( [$post_id ,',',$Appo->getID()]);
+                    // $this->print_array( [$post_id ,',',$CT_appointment_id]);
+                };
 
-                    // Aktualisiere das ACF-Feld im neuen Beitrag
-                    update_field('acf_ctevent_id', $Appo->getID(), $post_id);
-                } else {
-                    // Beitrag mit dem gesuchten Wert existiert bereits
-                    // Füge hier ggf. weiteren Code hinzu, um etwas anderes zu tun
-                    // echo $Appo->getID() .' Post gibts schon';
-                    $this->print_array( ['ist da,',$Appo->getID()]);
-                }
+                
+            };
 
-                // Setze die ursprüngliche Abfrage zurück
-                wp_reset_postdata();
-            }
-       
-        };
-
-
+        
+        }
+            
+            
     }
 
     public function register() 

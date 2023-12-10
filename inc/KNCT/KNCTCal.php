@@ -33,28 +33,34 @@ class KNctCal
         public function knct_get_Cal($cal_data,$data)
     {
         $allCalendars = CalendarRequest::all();
+    
+
         foreach($allCalendars as $Calender)
              {
                                                    
                 $CTid = $Calender->getId();
                 $CTname = $Calender->getName();
                 $CTnametrans = $Calender->getNameTranslated();
+                $CT_Term_id = '';
                 
                 $new_cal_data = array($CTid,$CTname,$CTnametrans);
                 
                 
-
-                if (in_array($CTid, $data)) {
+           
+                if (in_array($new_cal_data, $cal_data)) {
+                    
                 }
                 else{
+                    
                     array_push($data, $CTid);
                     array_push($cal_data, $new_cal_data);
+                    update_option( 'kn_nct_plugin',$data );
+                    update_option( 'kn_nct_cal',$cal_data );
+                    add_action('init', array ($this,'knct_term_Calendar'));
                 };
              };
 
-         update_option( 'kn_nct_plugin',$data );
-         update_option( 'kn_nct_cal',$cal_data );
-         add_action('init', array ($this,'knct_term_Calendar'));
+         
 
        
     }  
@@ -63,15 +69,14 @@ class KNctCal
     public function knct_term_Calendar()
     {
         $cal_data = get_option( 'kn_nct_cal' );
-        // $this-> print_array($cal_data);
 
         foreach ($cal_data as $cal) {
-            
+
             $CTid = $cal[0];
             $CTname = $cal[1];
             $CTnametrans = $cal[2];
 
-            // Name des Begriffs, den Sie erstellen möchten
+            
             $term_name = $CTname;
 
             // Taxonomie, zu der der Begriff hinzugefügt werden soll
@@ -79,13 +84,13 @@ class KNctCal
 
             // Optionen für den Begriff (optional)
             $args = array(
-                'description' => $CTid,
+                'description' => $CTname,
                 'slug'        => $CTnametrans,
                 'parent'      => 0, // ID des übergeordneten Begriffs (falls zutreffend)
             );
 
             // Fügen Sie den Begriff zur Taxonomie hinzu
-            wp_insert_term($term_name, $taxonomy, $args);
+            $CT_Term_id = wp_insert_term($term_name, $taxonomy, $args);
 
            
 
