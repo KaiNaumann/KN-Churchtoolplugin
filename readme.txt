@@ -1,7 +1,8 @@
 # KN-Churchtoolplugin
 Churchtoolplugin 3
 
-# Version 0.1
+# Version 0.1.0.1
+
 
 Das Plugin verbindet die Seite mit Churchtool(c) und lädt verschiedenen Daten in die Datenbank.
 

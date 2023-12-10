@@ -70,23 +70,23 @@ function deactivate_nct_plugin() {
 }
 register_deactivation_hook( __FILE__, 'deactivate_nct_plugin' );
 
-// /**
-//  * Initialize UpdateChecker
-//  */
-// require 'plugin-update-checker/plugin-update-checker.php';
-// use vendor\YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+/**
+ * Initialize UpdateChecker
+ */
+require 'plugin-update-checker/plugin-update-checker.php';
+use vendor\YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
-// $myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
-// 	'https://github.com/KaiNaumann/KN-Churchtoolplugin/',
-// 	__FILE__,
-// 	'KN-Churchtoolplugin'
-// );
+$myUpdateChecker = Puc_v4_Factory::buildUpdateChecker(
+	'https://github.com/KaiNaumann/KN-Churchtoolplugin/',
+	__FILE__,
+	'KN-Churchtoolplugin'
+);
 
 // //Set the branch that contains the stable release.
-// $myUpdateChecker->setBranch('Main');
+$myUpdateChecker->setBranch('Main');
 
 // //Optional: If you're using a private repository, specify the access token like this:
-// $myUpdateChecker->setAuthentication('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');
+$myUpdateChecker->setAuthentication('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');
 
 // plugin.php
 
