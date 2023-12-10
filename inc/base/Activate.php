@@ -6,11 +6,13 @@ namespace inc\base;
 use CTApi\CTLog;
 class Activate
 {
+
+	
     public static function activate_plugin() 
 	{
 		flush_rewrite_rules();
 
-        CTLog::enableFileLog(); // enable logfile
+		CTLog::enableFileLog(); // enable logfile
 
 // Grundwerte setzten
         $existingOptions = get_option('kn_nct_plugin');
@@ -66,7 +68,7 @@ class Activate
 		
 	}
 
-
+	
 
     
 }

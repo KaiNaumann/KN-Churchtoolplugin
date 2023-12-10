@@ -7,7 +7,7 @@
 Plugin Name: KN Churchtool Plugin
 Plugin URI: https://github.com/KaiNaumann/KN-Churchtoolplugin
 Description: FEG ASchaffenburg Churchtool Plugin
-Version: 0.1.0.0
+Version: 0.1.0.1
 Requires at least: 5.8
 Requires PHP: 5.6.20
 Author: Kai Naumann
@@ -40,6 +40,7 @@ Copyright 2005-2015 Automattic, Inc.
 
 defined( 'ABSPATH' ) or die( 'Hey, what are you doing here? You silly human!' );
 
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 ini_set('display_errors', 1);
 
@@ -87,6 +88,7 @@ register_deactivation_hook( __FILE__, 'deactivate_nct_plugin' );
 // //Optional: If you're using a private repository, specify the access token like this:
 // $myUpdateChecker->setAuthentication('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');
 
+// plugin.php
 
 
 

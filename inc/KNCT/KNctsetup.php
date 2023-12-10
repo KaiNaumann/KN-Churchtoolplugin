@@ -13,7 +13,8 @@ class KNctSetup
 
   
   // Benutzerdefinierter Beitragstyp erstellen
-  function create_ctevent_post_type() {
+  function create_ctevent_post_type() 
+{
     $labels = array(
         'name'               => 'CT Events',
         'singular_name'      => 'CT Event',
@@ -79,7 +80,10 @@ function create_calender_taxonomy() {
 }
 
 
-
+function create_acf()
+{
+}
+  
 
 
 
@@ -93,7 +97,8 @@ function create_calender_taxonomy() {
 
     add_action( 'init', array($this,'create_ctevent_post_type' ));
     add_action( 'init', array($this,'create_calender_taxonomy' ));
-    
+    $this -> create_acf();
+
     $this->activate();
 
   }
