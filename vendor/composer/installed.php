@@ -3,7 +3,7 @@
         'name' => 'nauma/kn-churchtoolplugin',
         'pretty_version' => 'dev-Main',
         'version' => 'dev-Main',
-        'reference' => '4e7d614c6861d6d42c2fd100efaad430e890aade',
+        'reference' => '0cb26b4d38e93006ac490aee21ad77631e4e5a08',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -60,7 +60,7 @@
         'monolog/monolog' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'c412c2e0d6c98525e55746294dc40413f6ffebf3',
+            'reference' => '6bee67ad21ebba82ace20dbf87c78b853d6be5f6',
             'type' => 'library',
             'install_path' => __DIR__ . '/../monolog/monolog',
             'aliases' => array(
@@ -71,7 +71,7 @@
         'nauma/kn-churchtoolplugin' => array(
             'pretty_version' => 'dev-Main',
             'version' => 'dev-Main',
-            'reference' => '4e7d614c6861d6d42c2fd100efaad430e890aade',
+            'reference' => '0cb26b4d38e93006ac490aee21ad77631e4e5a08',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
